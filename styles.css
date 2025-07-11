@@ -1,6 +1,194 @@
 /* Reset CSS */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* root variables */
+
+:root {
+  --backgroundColor: rgb(24, 24, 24);
+  --primaryColor: #cf861b;
+  --secundaryColor: #fddb82;
+  --textColor: #dddddd;
+  --titleFont: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --gradientDirection: to bottom;
+  --titleGradient: linear-gradient(
+    var(--gradientDirection),
+    var(--secundaryColor),
+    var(--primaryColor),
+    var(--secundaryColor)
+  );
+  --gradientTextSize: 100%;
+  --gradientTextRepeat: no-repeat;
+}
+
+/* page basic styles */
+
+.principalContainer {
+  background-color: var(--backgroundColor);
+  width: 100%;
+  height: auto;
+  font-family: var(--titleFont);
+}
+
+/* Header section */
+
+.headerContainer {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.logo,
+.logo img {
+  width: 40px;
+  height: 50px;
+}
+
+.title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primaryColor);
+  background: var(--titleGradient);
+  background-size: var(--gradientTextSize);
+  background-repeat: var(--gradientTextRepeat);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--textColor);
+  margin-left: auto;
+}
+
+/* Welcome Section */
+
+.welcomeContainer {
+  width: 100%;
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-image: url(./images/backgroundImage.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcomeContainer h1 {
+  font-size: 60px;
+  font-weight: 700;
+  color: var(--textColor);
+}
+
+.welcomeContainer p {
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--textColor);
+}
+
+/* info section */
+
+.infoContainer {
+  padding: 40px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--backgroundColor);
+  text-align: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* info tabs */
+
+.info {
+  width: calc(33.333% - 20px); 
+  min-width: 280px; 
+  max-width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--secundaryColor);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+.info:hover{
+  background-color:rgb(44, 44, 44);
+}
+
+.info h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primaryColor);
+  background: var(--titleGradient);
+  background-size: var(--gradientTextSize);
+  background-repeat: var(--gradientTextRepeat);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.info i {
+  font-size: 15px;
+  color: var(--secundaryColor);
+}
+
+/* Contact section */
+
+.contactUsContainer
+{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--backgroundColor);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .infoContainer {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+  
+  .info {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .infoContainer {
+    grid-template-columns: repeat(2, 1fr); 
+  }
 }
