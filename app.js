@@ -1,4 +1,4 @@
-// Mensajes personalizados para preguntas frecuentes
+
 const faqMessages = {
     "¿Qué debo hacer si quiero iniciar un proceso de divorcio?": "Debes contar con un abogado; si ambos cónyuges están de acuerdo, el trámite puede hacerse en notaría, y si no hay acuerdo, se adelanta mediante demanda ante un juez de familia.",
     "¿Cómo puedo registrar legalmente un contrato de arrendamiento?": "Debes acudir a una notaría o entidad competente para registrar el contrato y cumplir con los requisitos legales.",
@@ -37,7 +37,7 @@ document.getElementById("goAboutUs").addEventListener("click", function() {
 
 
 
-//info messages
+
 
 const infoMessages = {
     "Acciones de tutela": "Te ayudamos a proteger tus derechos fundamentales mediante acciones de tutela efectivas y rápidas.",
@@ -69,9 +69,9 @@ document.querySelectorAll('.info').forEach(function(infoDiv) {
     });
 });
 
-// Toast function
+
 function showToast(message) {
-    // Si ya hay un toast, elimínalo primero
+
     let oldToast = document.getElementById('custom-toast');
     if (oldToast) oldToast.remove();
 
@@ -106,9 +106,9 @@ document.getElementById("contactUsForm").addEventListener("submit", function(eve
         method: "POST",
         body: new FormData(this),
     }).then(() => {
-        this.reset(); // Limpia el formulario
+        this.reset(); 
         document.querySelector(".headerContainer").scrollIntoView({ behavior: 'smooth' }); // Scroll suave al header
-        showToast("¡Formulario enviado correctamente!"); // Muestra el toast
+        showToast("¡Formulario enviado correctamente!");
     });
 });
 

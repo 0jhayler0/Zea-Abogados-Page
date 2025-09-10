@@ -316,7 +316,7 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
 }
 .questions div{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
@@ -324,11 +324,27 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
   border-radius: 8px;
   cursor: pointer;
   transition: all ease 0.3s;
+  text-align: center;
+  gap: 10px;
 }
+
 .frecuentQuestionsContainer .questions div i{
   font-size: 10px;
   color: var(--textColor);
   margin-left: 10px;
+}
+
+.faq-text {
+  background: rgba(0,0,0,0.85);
+  color: var(--textColor);
+  padding: 30px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
 }
 /* Contact section */
 
