@@ -1,115 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zea Abogado y Asociados</title>
-    <link rel="icon" href="./images/ZeaLogo.png" type="image/png">
-</head>
-<link rel="stylesheet" href="./styles.css">
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-<body>
-    <div class="principalContainer">
-        <section id="header" class="headerContainer">
-            <div class="logo">
-                <img src="./images/ZeaLogo.png" alt="Zea Abogados y Asociados Logo">
-                <div class="title">
-                    <h1>ZEA</h1>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ZEA Abogados & Asociados — Defensa clara, ética y efectiva</title>
+
+    <meta name="description" content="Firma legal con soluciones integrales en derecho penal, laboral, civil, tutelas, tránsito y más. Atención cercana y estratégica. Agenda tu consulta." />
+    <link rel="icon" href="./images/ZeaLogo.png" type="image/png" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ZEA Abogados & Asociados" />
+    <meta property="og:description" content="Soluciones legales integrales y cercanas. Agenda tu consulta hoy." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./images/ZeaLogo.png" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"LegalService",
+      "name":"ZEA Abogados & Asociados",
+      "image":"./images/ZeaLogo.png",
+      "areaServed":"Colombia",
+      "url":"https://example.com",
+      "priceRange":"$$",
+      "serviceType":["Derecho penal","Derecho laboral","Derecho civil","Tránsito","Acciones de tutela","Derechos de petición"]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- Header (sin menú móvil) -->
+    <header class="site-header" id="top">
+      <div class="container header__inner">
+        <a class="brand" href="#top" aria-label="Inicio">
+          <img class="brand__logo" src="./images/ZeaLogo.png" alt="Logo ZEA" />
+          <span class="brand__name">ZEA</span>
+          <span class="brand__tag">Abogados &amp; Asociados</span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación principal">
+          <a class="nav__link" href="#servicios">Servicios</a>
+          <a class="nav__link" href="#por-que">¿Por qué ZEA?</a>
+          <a class="nav__link" href="#proceso">Proceso</a>
+          <a class="nav__link" href="#faq">Preguntas</a>
+          <a class="btn btn--sm btn--primary" href="#contacto">Contáctanos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" role="banner" aria-label="Bienvenida">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <div class="hero__copy">
+            <h1>Defensa legal con <span class="grad">claridad</span>, <span class="grad">ética</span> y <span class="grad">resultado</span></h1>
+            <p>En ZEA Abogados &amp; Asociados transformamos problemas legales en planes de acción efectivos. Atención cercana y estratégica en cada etapa de tu caso.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#contacto"><i class="fa-solid fa-calendar-check"></i> Agendar consulta</a>
+              <button id="ctaWhatsApp" class="btn btn--ghost" type="button"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+            </div>
+            <ul class="trust">
+              <li><i class="fa-solid fa-shield-halved"></i> Enfoque ético</li>
+              <li><i class="fa-solid fa-scale-balanced"></i> Experiencia multidisciplinar</li>
+              <li><i class="fa-solid fa-gavel"></i> Estrategias a tu medida</li>
+            </ul>
+          </div>
+          <aside class="hero__panel">
+            <div class="panel">
+              <div class="panel__head">
+                <i class="fa-solid fa-message"></i>
+                <span>Consulta Inicial</span>
+              </div>
+              <p>Cuéntanos tu caso. Te daremos una ruta clara de acción y próximos pasos.</p>
+              <ul class="panel__bullets">
+                <li><i class="fa-solid fa-check"></i> Respuesta en 24h hábiles</li>
+                <li><i class="fa-solid fa-check"></i> Confidencialidad garantizada</li>
+                <li><i class="fa-solid fa-check"></i> Sin letra pequeña</li>
+              </ul>
+              <a class="btn btn--block btn--primary" href="#contacto">Empezar ahora</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Servicios (solo títulos + íconos; reveal en click sin afectar layout) -->
+      <section id="servicios" class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Áreas de práctica</h2>
+            <p class="section__lead">Abordamos tu caso con rigor técnico, estrategia y comunicación clara.</p>
+          </header>
+
+          <div class="services">
+            <article class="service" data-key="Acciones de tutela">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-1" id="sbtn-1">
+                <div class="service__icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Acciones de tutela</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-1" role="region" aria-labelledby="sbtn-1" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Evaluación de procedencia y urgencia</li>
+                    <li><i class="fa-solid fa-check"></i> Redacción y radicación</li>
+                    <li><i class="fa-solid fa-check"></i> Impugnación y seguimiento</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-            </div>
-            <div class="menu">
-                <h3 id="goContactUS">Contactanos</h3>
-                <h3 id="goAboutUs">Sobre Nosotros</h3>
-            </div>
-        </section>
-        <section class="welcomeContainer">
-            <h1>Abogado & Asociados</h1>
-            <p>Deja tu defensa en nuestras manos</p>
-        </section>
-        <section class="infoContainer">
-            <h1 class="presentationTitle">¿Quienes somos?</h1>
-            <h2 class="presentation">Somos una firma de abogados comprometido con brindar soluciones legales integrales, claras y efectivas, respaldados por la experiencia y el profesionalismo de nuestro equipo. Ofrecemos asesoría y representación en distintas áreas del derecho, siempre con un enfoque cercano y transparente, priorizando los intereses de nuestros clientes y trabajando con ética y responsabilidad para proteger sus derechos y alcanzar los mejores resultados.
-</h2>
-            <div class="info" id="info1">
-                <h2>Acciones de tutela</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Asesoria juridica</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Derecho penal</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Derecho laboral</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Defensa civil</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Tramites de transito</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Defensa tecnica y juridica</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="info" id="info1">
-                <h2>Derechos de peticion</h2><i class="fa-solid fa-chevron-down"></i>
-            </div>
-        </section>
-        <section class="frecuentQuestionsContainer">
-            <h2>Preguntas frecuentes:</h2>
-            <div class="questions">
-                <div>
-                    <h3>¿Qué debo hacer si quiero iniciar un proceso de divorcio?</h3>
-                    <i class="fa-solid fa-chevron-down"></i><br>
+              </div>
+            </article>
+
+            <article class="service" data-key="Asesoría jurídica">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-2" id="sbtn-2">
+                <div class="service__icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Asesoría jurídica</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-2" role="region" aria-labelledby="sbtn-2" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Análisis de documentos y riesgos</li>
+                    <li><i class="fa-solid fa-check"></i> Concepto jurídico claro</li>
+                    <li><i class="fa-solid fa-check"></i> Plan de acción y próximos pasos</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Cómo puedo registrar legalmente un contrato de arrendamiento?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Derecho penal">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-3" id="sbtn-3">
+                <div class="service__icon"><i class="fa-solid fa-handcuffs"></i></div>
+                <h3>Derecho penal</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-3" role="region" aria-labelledby="sbtn-3" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Defensa técnica en todas las fases</li>
+                    <li><i class="fa-solid fa-check"></i> Audiencias y negociación</li>
+                    <li><i class="fa-solid fa-check"></i> Recursos y seguimiento</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Qué debo hacer para reclamar una deuda que no me han pagado?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Derecho laboral">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-4" id="sbtn-4">
+                <div class="service__icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>Derecho laboral</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-4" role="region" aria-labelledby="sbtn-4" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Reclamaciones e indemnizaciones</li>
+                    <li><i class="fa-solid fa-check"></i> Conciliaciones y acuerdos</li>
+                    <li><i class="fa-solid fa-check"></i> Prevención y cumplimiento</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Qué indemnización me corresponde si me despiden sin justa causa?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Defensa civil">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-5" id="sbtn-5">
+                <div class="service__icon"><i class="fa-solid fa-landmark"></i></div>
+                <h3>Defensa civil</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-5" role="region" aria-labelledby="sbtn-5" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Contratos y responsabilidad</li>
+                    <li><i class="fa-solid fa-check"></i> Medidas cautelares</li>
+                    <li><i class="fa-solid fa-check"></i> Ejecución y cobros</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Cómo puedo solicitar una cuota alimentaria para mis hijos?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Trámites de tránsito">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-6" id="sbtn-6">
+                <div class="service__icon"><i class="fa-solid fa-car-burst"></i></div>
+                <h3>Trámites de tránsito</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-6" role="region" aria-labelledby="sbtn-6" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Comparendos y acuerdos de pago</li>
+                    <li><i class="fa-solid fa-check"></i> Recursos y audiencias</li>
+                    <li><i class="fa-solid fa-check"></i> Levantamiento de medidas</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Qué trámites necesito para constituir legalmente una empresa?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Defensa técnica y jurídica">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-7" id="sbtn-7">
+                <div class="service__icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3>Defensa técnica y jurídica</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-7" role="region" aria-labelledby="sbtn-7" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Estrategia procesal integral</li>
+                    <li><i class="fa-solid fa-check"></i> Gestión probatoria</li>
+                    <li><i class="fa-solid fa-check"></i> Recursos y ejecución</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
-                <div>
-                    <h3>¿Qué es una tutela y cuándo puedo presentarla?</h3>
-                    <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </article>
+
+            <article class="service" data-key="Derechos de petición">
+              <button class="service__head" aria-expanded="false" aria-controls="sreveal-8" id="sbtn-8">
+                <div class="service__icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>Derechos de petición</h3>
+                <i class="fa-solid fa-chevron-down caret"></i>
+              </button>
+
+              <div class="service__reveal" id="sreveal-8" role="region" aria-labelledby="sbtn-8" aria-hidden="true">
+                <div class="reveal__inner">
+                  <h4>¿Qué incluye?</h4>
+                  <p class="reveal__text"></p>
+                  <ul class="reveal__bullets">
+                    <li><i class="fa-solid fa-check"></i> Redacción y radicación</li>
+                    <li><i class="fa-solid fa-check"></i> Requerimientos y respuestas</li>
+                    <li><i class="fa-solid fa-check"></i> Acciones posteriores</li>
+                  </ul>
+                  <a class="btn btn--primary btn--block" href="#contacto">Consultar esta área</a>
+                  <button class="reveal__close" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
                 </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Por qué ZEA -->
+      <section id="por-que" class="section alt">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">¿Por qué elegir ZEA?</h2>
+            <p class="section__lead">Porque necesitas un equipo que combine rigor jurídico con comunicación humana.</p>
+          </header>
+
+          <div class="why">
+            <div class="why__item">
+              <i class="fa-solid fa-comments why__icon"></i>
+              <h3>Comunicación clara</h3>
+              <p>Te explicamos cada fase en términos simples. Sin sorpresas.</p>
             </div>
-        </section>
-        <section class="contactUsContainer">
-            <form id="contactUsForm" method="post" action="https://formsubmit.co/jhaylerzea12@gmail.com">
-                <h2>Contactanos</h2><br>
-                <input type="text" name="nombre" placeholder="Nombre Completo" required><br>
-                <input type="email" name="email" placeholder="Correo Electronico" required><br>
-                <input type="tel" name="telefono" placeholder="Numero de Telefono" required><br>
-                <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Escribe tu mensaje aqui..." required></textarea><br>
-                <input type="hidden" name="_captcha" value="false">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-        <button>
-            <i id="whatsappButton" class="fa-brands fa-whatsapp"></i>
-        </button>
-        
-    </div>
-    <script src="app.js"></script>
-</body>
+            <div class="why__item">
+              <i class="fa-solid fa-people-group why__icon"></i>
+              <h3>Estrategia a medida</h3>
+              <p>Diseñamos táctica según tu contexto y objetivos concretos.</p>
+            </div>
+            <div class="why__item">
+              <i class="fa-solid fa-lock why__icon"></i>
+              <h3>Confidencialidad</h3>
+              <p>Protegemos tu información con estándares profesionales.</p>
+            </div>
+            <div class="why__item">
+              <i class="fa-solid fa-square-poll-vertical why__icon"></i>
+              <h3>Resultados</h3>
+              <p>Orientados a resolver, no a prolongar procesos innecesarios.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proceso -->
+      <section id="proceso" class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Nuestro proceso</h2>
+            <p class="section__lead">Transparente, ágil y enfocado en resolver.</p>
+          </header>
+
+          <ol class="steps">
+            <li class="step">
+              <div class="step__num">1</div>
+              <div class="step__body">
+                <h3>Diagnóstico</h3>
+                <p>Revisión de antecedentes y documentos. Identificamos tu mejor ruta legal.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__num">2</div>
+              <div class="step__body">
+                <h3>Estrategia</h3>
+                <p>Definimos acciones, tiempos y expectativas reales.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__num">3</div>
+              <div class="step__body">
+                <h3>Ejecución</h3>
+                <p>Tramitamos, gestionamos audiencias y hacemos seguimiento continuo.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="step__num">4</div>
+              <div class="step__body">
+                <h3>Cierre & seguimiento</h3>
+                <p>Te acompañamos hasta el final y en medidas posteriores si son necesarias.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section alt">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Preguntas frecuentes</h2>
+          </header>
+
+          <div class="faq">
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Qué debo hacer si quiero iniciar un proceso de divorcio?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Cómo puedo registrar legalmente un contrato de arrendamiento?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Qué debo hacer para reclamar una deuda que no me han pagado?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Qué indemnización me corresponde si me despiden sin justa causa?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Cómo puedo solicitar una cuota alimentaria para mis hijos?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Qué trámites necesito para constituir legalmente una empresa?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+            <article class="faq__item">
+              <button class="faq__q" aria-expanded="false">¿Qué es una tutela y cuándo puedo presentarla?</button>
+              <div class="faq__a" hidden></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="cta">
+        <div class="container cta__inner">
+          <h2>¿Listo para avanzar con tu caso?</h2>
+          <p>Agenda tu consulta y te daremos una ruta concreta para resolverlo.</p>
+          <div>
+            <a class="btn btn--primary" href="#contacto">Agendar ahora</a>
+            <button id="ctaWhatsApp2" class="btn btn--ghost" type="button"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="section">
+        <div class="container">
+          <header class="section__head">
+            <h2 class="section__title">Contáctanos</h2>
+            <p class="section__lead">Cuéntanos tu caso. Te responderemos a la mayor brevedad posible.</p>
+          </header>
+
+          <form id="contactUsForm" class="form" method="post" action="https://formsubmit.co/jhaylerzea12@gmail.com">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="grid">
+              <label class="field">
+                <span class="field__label">Nombre completo</span>
+                <input class="field__input" name="nombre" type="text" placeholder="Nombre completo" required />
+              </label>
+              <label class="field">
+                <span class="field__label">Correo electrónico</span>
+                <input class="field__input" name="email" type="email" placeholder="tunombre@email.com" required />
+              </label>
+              <label class="field">
+                <span class="field__label">Número de teléfono</span>
+                <input class="field__input" name="telefono" type="tel" placeholder="+57 3xx xxx xxxx" pattern="[0-9+\\-\\s]{7,20}" required />
+              </label>
+              <label class="field field--full">
+                <span class="field__label">Mensaje</span>
+                <textarea class="field__input" name="mensaje" rows="6" placeholder="Cuéntanos brevemente tu caso..." required></textarea>
+              </label>
+            </div>
+            <button class="btn btn--primary form__submit" type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <p>© <span id="year"></span> ZEA Abogados &amp; Asociados. Todos los derechos reservados.</p>
+        <nav class="footer__nav" aria-label="Legal">
+          <a href="#top">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- WhatsApp flotante -->
+    <button id="whatsappButton" class="whatsapp" aria-label="Abrir WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </button>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="./app.js"></script>
+  </body>
 </html>
