@@ -1,3 +1,74 @@
+/* Animations */
+#splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+#splash-logo-img {
+  width: 90px;
+  height: 110px;
+  margin-bottom: 18px;
+  transition: all 1.6s cubic-bezier(0.4,0,0.2,1);
+}
+#splash-logo-text {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #cf861b;
+  background: linear-gradient(to bottom, #fddb82, #cf861b, #fddb82);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 1.6s cubic-bezier(0.4,0,0.2,1);
+}
+.fade-in {
+  animation: fadeIn 1s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.scale-hover {
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1), box-shadow 0.25s;
+}
+.scale-hover:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.btn-anim {
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+.btn-anim:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(207,134,27,0.15);
+}
+.input-focus {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input-focus:focus {
+  border-color: var(--primaryColor);
+  box-shadow: 0 0 0 2px var(--secundaryColor, #fddb82);
+}
+#whatsappButton {
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+#whatsappButton:hover {
+  box-shadow: 0 6px 18px rgba(37,211,102,0.25);
+  transform: scale(1.08);
+}
 /* -------------------- RESPONSIVE DESIGN -------------------- */
 @media (max-width: 900px) {
   .headerContainer {
@@ -11,6 +82,10 @@
   }
   .infoContainer, .frecuentQuestionsContainer, .contactUsContainer {
     margin: 24px 0;
+  }
+  .questions > div {
+    width: 90%;
+    text-align: center;
   }
 }
 
@@ -34,12 +109,15 @@
   }
   .info, .questions > div {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 12px;
     font-size: 0.98rem;
+    text-align: center;
   }
   .info h2, .questions h3 {
     font-size: 1rem;
+    text-align: center;
+    width: 100%;
   }
   .contactUsContainer form {
     padding: 12px;
@@ -145,7 +223,8 @@ h3 {
   font-size: 16px;
   font-weight: 600;
   color: var(--textColor);
-  margin-left: auto;
+  margin-left: 0;
+  text-align: center;
 }
 .menu{
   display: flex;
@@ -292,6 +371,7 @@ h3 {
 /* Frecuently Asked Questions */
 
 .frecuentQuestionsContainer{
+  align-items: center;
  background-color: var(--secobndaryBackgroundColor);
   padding: 40px;
  width: 80%;
@@ -313,11 +393,13 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
   gap: 20px;
   margin-top: 20px;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
 }
 .questions div{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
   background-color: var(--backgroundColor);
@@ -326,25 +408,37 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
   transition: all ease 0.3s;
   text-align: center;
   gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 700px;
 }
 
 .frecuentQuestionsContainer .questions div i{
   font-size: 10px;
   color: var(--textColor);
-  margin-left: 10px;
 }
-
 .faq-text {
   background: rgba(0,0,0,0.85);
-  color: var(--textColor);
-  padding: 30px 16px;
+  color: #fff;
+  padding: 0 16px;
   border-radius: 8px;
   font-size: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   position: relative;
   z-index: 2;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
+  transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
   pointer-events: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.faq-text.faq-open {
+  padding: 30px 16px;
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
 }
 /* Contact section */
 
@@ -408,6 +502,7 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
   filter: brightness(1.1);}
 
 /* whatsapp */
+
 #whatsappButton {
   position: fixed;
   bottom: 20px;
@@ -424,4 +519,15 @@ box-shadow: inset 10px 10px 25px rgba(0,0,0,0.3);
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
   cursor: pointer;
   z-index: 1000;
+}
+
+/* footer section */
+
+.footerContainer {
+  background-color: var(--secobndaryBackgroundColor);
+  color: var(--textColor);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }

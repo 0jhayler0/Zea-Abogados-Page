@@ -1,19 +1,20 @@
 
 const faqMessages = {
-    "¿Qué debo hacer si quiero iniciar un proceso de divorcio?": "Debes contar con un abogado; si ambos cónyuges están de acuerdo, el trámite puede hacerse en notaría, y si no hay acuerdo, se adelanta mediante demanda ante un juez de familia.",
-    "¿Cómo puedo registrar legalmente un contrato de arrendamiento?": "Debes acudir a una notaría o entidad competente para registrar el contrato y cumplir con los requisitos legales.",
-    "¿Qué debo hacer para reclamar una deuda que no me han pagado?": "Puedes iniciar un proceso de cobro prejurídico o jurídico. Te asesoramos en cada paso.",
-    "¿Qué indemnización me corresponde si me despiden sin justa causa?": "Tienes derecho a una indemnización según el tiempo laborado y el tipo de contrato. Consulta tu caso específico.",
-    "¿Cómo puedo solicitar una cuota alimentaria para mis hijos?": "Puedes presentar una demanda de alimentos ante un juez de familia o acudir a la comisaría de familia.",
-    "¿Qué trámites necesito para constituir legalmente una empresa?": "Debes registrar la empresa en la Cámara de Comercio, obtener el NIT y cumplir con los requisitos tributarios.",
-    "¿Qué es una tutela y cuándo puedo presentarla?": "La tutela es un mecanismo para proteger derechos fundamentales cuando no existen otros medios judiciales."
+    "¿Qué debo hacer si quiero iniciar un proceso de divorcio?": "Para iniciar un proceso de divorcio en Colombia primero debes definir si será de mutuo acuerdo o contencioso. El divorcio de mutuo acuerdo se realiza ante notaría con la asesoría de un abogado y suele ser más rápido y económico, siempre que ambos cónyuges estén de acuerdo en temas como hijos, bienes y alimentos. El divorcio contencioso, en cambio, se adelanta ante un juez de familia cuando no hay consenso y requiere una demanda que alargará el trámite. En cualquiera de las dos opciones, necesitarás contar con un abogado, el registro civil de matrimonio, los documentos de los hijos si los hay y tu cédula de ciudadanía. Es recomendable asesorarse previamente para elegir la vía más conveniente.",
+    "¿Cómo puedo registrar legalmente un contrato de arrendamiento?": "En Colombia no es obligatorio registrar un contrato de arrendamiento ante una entidad pública, pero sí es fundamental que se firme por escrito entre arrendador y arrendatario para que tenga validez legal. El contrato debe incluir datos de las partes, descripción del inmueble, canon de arrendamiento, plazo, condiciones de pago y obligaciones. Aunque no se registra en la Cámara de Comercio ni en una notaría de forma automática, sí se puede autenticar ante notaría para darle mayor seguridad jurídica. También es recomendable anexar copias de cédulas, certificado de tradición del inmueble y un inventario de entrega. Con estos pasos el contrato queda respaldado legalmente en caso de incumplimiento.",
+    "¿Qué debo hacer para reclamar una deuda que no me han pagado?": "Si una persona no te ha pagado una deuda, lo primero es intentar un acuerdo directo y documentar todos los mensajes o soportes que demuestren la obligación. Si no hay respuesta, puedes enviar una carta de cobro formal o acudir a un centro de conciliación para buscar una solución extrajudicial. En caso de no lograr un acuerdo, la vía legal es presentar una demanda ejecutiva ante un juez, siempre que tengas un título valor o contrato que respalde la deuda. Para ello necesitarás la asesoría de un abogado, quien presentará el proceso y pedirá medidas como embargos. Es importante actuar dentro de los plazos de prescripción y guardar todas las pruebas que sustenten tu reclamo.",
+    "¿Qué indemnización me corresponde si me despiden sin justa causa?": "En Colombia, cuando un trabajador es despedido sin justa causa, la ley establece el derecho a recibir una indemnización económica. El valor depende del tipo de contrato y del tiempo laborado en la empresa. Si el contrato es a término indefinido, se paga un número de días de salario que varía según los años de servicio: 30 días por el primer año y entre 20 y 40 días por cada año adicional, dependiendo del salario. En contratos a término fijo, la indemnización corresponde al tiempo que falte para terminar el contrato pactado. Además, el empleador debe cancelar las prestaciones sociales, vacaciones y demás conceptos pendientes. Siempre es recomendable asesorarse legalmente para calcular el monto exacto.",
+    "¿Cómo puedo solicitar una cuota alimentaria para mis hijos?": "Para solicitar una cuota alimentaria en Colombia puedes acudir inicialmente a un centro de conciliación, la Defensoría de Familia o una comisaría de familia, donde se cita al padre o madre obligado a aportar y se busca un acuerdo formal. Si no se llega a un arreglo, es posible presentar una demanda de alimentos ante un juez de familia, quien fijará el monto según las necesidades del menor y la capacidad económica del padre o madre. La cuota puede cubrir alimentación, educación, vivienda, salud, recreación y vestuario. Es importante presentar registros civiles de nacimiento, documentos que prueben los gastos del menor y la identificación de las partes. Una vez fijada, la obligación queda amparada legalmente y su incumplimiento puede generar sanciones.",
+    "¿Qué trámites necesito para constituir legalmente una empresa?": "Para constituir legalmente una empresa en Colombia debes primero definir el tipo de sociedad (persona natural, SAS, limitada, etc.) y luego registrar el nombre en la Cámara de Comercio. Después se elabora el acta de constitución o estatutos según el tipo de empresa y se presenta la inscripción formal en el Registro Mercantil. Una vez inscrita, debes obtener el RUT en la DIAN para efectos tributarios y, si corresponde, el registro como responsable de IVA o retención en la fuente. También puede requerirse la apertura de una cuenta bancaria empresarial y permisos adicionales según la actividad económica. Cumplir con estos trámites garantiza que la empresa opere de manera legal y con respaldo jurídico.",
+    "¿Qué es una tutela y cuándo puedo presentarla?": "La acción de tutela en Colombia es un mecanismo constitucional que permite a cualquier persona solicitar la protección inmediata de sus derechos fundamentales cuando son vulnerados o amenazados por una autoridad pública o, en algunos casos, por particulares. Se caracteriza por ser un trámite rápido, sencillo y gratuito, que no requiere abogado aunque es recomendable contar con asesoría. La tutela se presenta ante cualquier juez y debe demostrarse que no existen otros mecanismos judiciales efectivos para proteger el derecho o que estos no resultan idóneos en la situación concreta. Se puede interponer en temas como salud, educación, vida, igualdad, debido proceso, entre otros. Una vez admitida, el juez debe dar respuesta en un plazo muy corto, generalmente de 10 días."
 };
 
 document.querySelectorAll('.frecuentQuestionsContainer .questions > div').forEach(function(qDiv) {
     qDiv.addEventListener('click', function() {
         let existing = qDiv.querySelector('.faq-text');
         if (existing) {
-            existing.remove();
+            existing.classList.remove('faq-open');
+            setTimeout(() => existing.remove(), 500);
             return;
         }
         const title = qDiv.querySelector('h3').innerText.trim();
@@ -21,10 +22,9 @@ document.querySelectorAll('.frecuentQuestionsContainer .questions > div').forEac
         const textDiv = document.createElement('div');
         textDiv.className = 'faq-text';
         textDiv.innerText = message;
-        textDiv.style.opacity = 0;
-        textDiv.style.transition = 'opacity 0.5s';
         qDiv.appendChild(textDiv);
-        setTimeout(() => { textDiv.style.opacity = 1; }, 10);
+        void textDiv.offsetWidth;
+        textDiv.classList.add('faq-open');
     });
 });
 document.getElementById("goContactUS").addEventListener("click", function() {
@@ -107,14 +107,14 @@ document.getElementById("contactUsForm").addEventListener("submit", function(eve
         body: new FormData(this),
     }).then(() => {
         this.reset(); 
-        document.querySelector(".headerContainer").scrollIntoView({ behavior: 'smooth' }); // Scroll suave al header
+        document.querySelector(".headerContainer").scrollIntoView({ behavior: 'smooth' }); 
         showToast("¡Formulario enviado correctamente!");
     });
 });
 
 
 document.getElementById("whatsappButton").addEventListener("click", function() {
-    const phoneNumber = "573117778502";
+    const phoneNumber = "573202480808";
     const mensagge = "Hola, me gustaría obtener más información sobre sus servicios.";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensagge)}`;
     window.open(url, '_blank');
